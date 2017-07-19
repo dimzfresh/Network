@@ -54,16 +54,6 @@ final class MemesBackend: Backend {
     }
 }
 
-extension MemesBackend {
-    static func allMemesEndpoint() -> Endpoint {
-        return allMemesEndpoint()
-    }
-    
-    static func getMemeEndpoint(name: String) -> Endpoint {
-        return GetMemeEndpoint(name: name)
-    }
-}
-
 struct AllMemesEndpoint: Endpoint {
     var url: URL {
         return URL(string: MemesBackend.baseUrl + "/")!
@@ -120,6 +110,14 @@ struct SignInEndpoint: Endpoint {
 }
 
 extension MemesBackend {
+    
+    static func allMemesEndpoint() -> Endpoint {
+        return allMemesEndpoint()
+    }
+    
+    static func getMemeEndpoint(name: String) -> Endpoint {
+        return GetMemeEndpoint(name: name)
+    }
     
     static func authorizationHeaders(contentType: String) -> HTTPHeaderFields {
         //let authToken = "" // read the token from secure storage.
