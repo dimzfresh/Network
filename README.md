@@ -37,6 +37,7 @@ extension MemesBackend {
 Example of an endpoint that takes one param and need custom headers.
 
 struct GetMemeEndpoint: Endpoint {
+
     let name: String
     
     var url: URL {
